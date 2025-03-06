@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../Services/Api";
+import {Link} from "react-router-dom";
 import "./index.css"
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
             <article key={filme.id}>
               <strong>{filme.title}</strong>
               <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} />
+              <Link to={`/filme/${filme.id}`}>Acessar</Link>
            
             </article>
           );
