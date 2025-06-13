@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Home from './Pages/Home';
-import Filmes from './Pages/Filmes/Filmes';
+import Filme from './Pages/Filme';
 import Header from './Components/Header';
+import Erro from  './Pages/Erro';
 
 
 export default function RoutesApp(){
@@ -10,8 +11,10 @@ export default function RoutesApp(){
         <BrowserRouter>
         <Header/>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/filmes/:id" element={<Filmes />} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/filme/:id" element={<Filme />} />
+
+                <Route path="*" element={<Erro/>}/>
             </Routes>
         </BrowserRouter>
     )
